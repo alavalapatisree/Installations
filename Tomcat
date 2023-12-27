@@ -22,3 +22,7 @@
                                                                         /opt/tomcat/updated: This is the destination path where the symbolic link will be created.
                                                                         you should make sure that the destination path (/opt/tomcat/updated) does not exist before running the command. 
                                                                         If, for some reason, the /opt/tomcat/updated path already exists as a directory or file, the ln command will not overwrite it. Instead, it will likely result in an error. 
+6) sudo chown -R tomcat: /opt/tomcat/*  -> chown: This command is used to change the owner and group of files or directories in Unix-like systems.
+                                          -R: This option stands for "recursive" and is used to change the ownership of the specified directory and its contents recursively.
+                                          tomcat:: The colon (:) without specifying a group after it implies that the default group of the user "tomcat" will be used.
+                                          The /* at the end of the path ensures that only the contents of the directory are targeted, not the directory itself.
