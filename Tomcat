@@ -86,3 +86,43 @@ WantedBy=multi-user.target
 
 </tomcat-users>
 
+12) sudo vi /opt/tomcat/updated/conf/server.xml
+
+connector port 8090  --- to change access port number
+
+13) sudo vi /opt/tomcat/updated/webapps/manager/META-INF/context.xml
+
+<ContextantiResourceLocking="false" privileged="true" >
+
+. . .
+(comment this part)
+<!--
+<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+
+. . .
+
+</Context>
+
+14) sudo vi /opt/tomcat/updated/webapps/host-manager/META-INF/context.xml
+
+<ContextantiResourceLocking="false" privileged="true" >
+
+. . .
+(comment this part)
+<!--
+<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+
+. . .
+
+</Context>
+
+15) systemctl restart tomcat
+16)
+rupasree@rupasree:~$ rupasree@rupasree:~$ sudo passwd tomcat
+New password:
+Retype new password:
+passwd: password updated successfully
