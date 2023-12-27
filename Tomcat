@@ -16,3 +16,9 @@
 4) sudo tar xf apache-tomcat-9.0.84.tar.gz -C /opt/tomcat  -> xf: These are options used with the tar command. x stands for extract, and f specifies that the next argument is the name of the archive file to extract.
                                                               apache-tomcat-9.0.84.tar.gz: This is the name of the archive file that you want to extract
                                                               -C /opt/tomcat: This option specifies the directory where the contents of the archive should be extracted. In this case, it's set to /opt/tomcat.
+5) sudo ln -s /opt/tomcat/apache-tomcat-9.0.84 /opt/tomcat/updated   -> ln: This command is used to create links between files. 
+                                                                        -s: This option stands for "symbolic." It specifies that the link to be created is a symbolic link.
+                                                                        /opt/tomcat/apache-tomcat-9.0.84: This is the source directory or file to which the link will point
+                                                                        /opt/tomcat/updated: This is the destination path where the symbolic link will be created.
+                                                                        you should make sure that the destination path (/opt/tomcat/updated) does not exist before running the command. 
+                                                                        If, for some reason, the /opt/tomcat/updated path already exists as a directory or file, the ln command will not overwrite it. Instead, it will likely result in an error. 
