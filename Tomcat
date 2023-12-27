@@ -72,3 +72,17 @@ WantedBy=multi-user.target
 
                                     When to Use:
                                     After making changes to systemd service files (e.g., creating or modifying a service definition), it's a good practice to run sudo systemctl daemon-reload to apply those changes without needing to reboot the system.
+10) sudo systemctl start tomcat  -> systemctl: A command-line tool used to control the systemd system and service manager.
+                                    start: This is a subcommand of systemctl. It is used to start a systemd service.
+                                    tomcat: The name of the systemd service unit. In this case, it refers to the Tomcat service.
+11) sudo vi /opt/tomcat/updated/conf/tomcat-users.xml
+
+<tomcat-users>
+
+<!--Comments-->
+<role rolename="admin-gui"/>
+<role rolename="manager-gui"/>
+<user username="tomcat" password="tomcat" roles="admin-gui,manager-gui"/>
+
+</tomcat-users>
+
