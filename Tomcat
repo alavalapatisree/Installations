@@ -13,3 +13,6 @@
 3) wget -c https://downloads.apache.org/tomcat/tomcat-9/v9.0.84/bin/apache-tomcat-9.0.84.tar.gz   -> The purpose of this command is to download the Apache Tomcat 9.0.84 distribution file from the specified URL. 
                                                                                                       wget: This is a command-line utility for downloading files from the web. 
                                                                                                       -c: This option, short for --continue, is used to resume an interrupted download. If the file already exists and is incomplete, wget will attempt to continue downloading it.
+4) sudo tar xf apache-tomcat-9.0.84.tar.gz -C /opt/tomcat  -> xf: These are options used with the tar command. x stands for extract, and f specifies that the next argument is the name of the archive file to extract.
+                                                              apache-tomcat-9.0.84.tar.gz: This is the name of the archive file that you want to extract
+                                                              -C /opt/tomcat: This option specifies the directory where the contents of the archive should be extracted. In this case, it's set to /opt/tomcat.
