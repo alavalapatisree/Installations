@@ -26,3 +26,13 @@
                                           -R: This option stands for "recursive" and is used to change the ownership of the specified directory and its contents recursively.
                                           tomcat:: The colon (:) without specifying a group after it implies that the default group of the user "tomcat" will be used.
                                           The /* at the end of the path ensures that only the contents of the directory are targeted, not the directory itself.
+7) sudo sh -c 'chmod +x /opt/tomcat/updated/bin/*.sh'  -> Run a shell command using sh. The command within single quotes (') is to make all shell script files (*.sh) 
+                                                          sh -c command involves launching a subshell (sh -c) to execute the chmod command. The subshell is then run with elevated privileges using sudo.
+
+                                                          sudo  chmod +x /opt/tomcat/updated/bin/*.sh
+                                                          sudo sh -c 'chmod +x /opt/tomcat/updated/bin/*.sh'
+                                                          
+                                                          The first command directly invokes chmod with sudo to set execute permissions on the specified files.
+                                                          The second command involves launching a subshell (sh -c) to execute the chmod command. The subshell is then run with elevated privileges using sudo.
+                                                          In this specific case, both commands achieve the same result, and you can choose the one that you find more readable or convenient.
+                                                          The use of sh -c might be more relevant when the command being executed is more complex or involves multiple commands. In this case, where only a single chmod command is used, the first command is more concise.
