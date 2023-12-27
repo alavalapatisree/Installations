@@ -36,3 +36,39 @@
                                                           The second command involves launching a subshell (sh -c) to execute the chmod command. The subshell is then run with elevated privileges using sudo.
                                                           In this specific case, both commands achieve the same result, and you can choose the one that you find more readable or convenient.
                                                           The use of sh -c might be more relevant when the command being executed is more complex or involves multiple commands. In this case, where only a single chmod command is used, the first command is more concise.
+8) sudo vi /etc/systemd/system/tomcat.service  -> Editing the systemd service file (tomcat.service) allows you to configure how the Tomcat service is managed by the systemd init system. 
+
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=network.target
+
+[Service]
+Type=forking
+
+Environment="JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64"
+Environment="CATALINA_PID=/opt/tomcat/updated/temp/tomcat.pid"
+Environment="CATALINA_HOME=/opt/tomcat/updated/"
+Environment="CATALINA_BASE=/opt/tomcat/updated/"
+Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+Environment="JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
+
+ExecStart=/opt/tomcat/updated/bin/startup.sh
+ExecStop=/opt/tomcat/updated/bin/shutdown.sh
+
+User=tomcat
+Group=tomcat
+UMask=0007
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+
+9) sudo systemctl daemon-reload  -> systemctl: A command-line tool used to control the systemd system and service manager.
+                                    daemon-reload: This is a subcommand of systemctl. It instructs systemd to reload its configuration files and recreate its internal dependency tree.
+                                    The primary purpose of sudo systemctl daemon-reload is to inform systemd about any changes made to the unit files or other configuration files. 
+                                    After making modifications to systemd service files or related configuration, running daemon-reload is necessary to apply those changes without restarting the system.
+
+                                    When to Use:
+                                    After making changes to systemd service files (e.g., creating or modifying a service definition), it's a good practice to run sudo systemctl daemon-reload to apply those changes without needing to reboot the system.
