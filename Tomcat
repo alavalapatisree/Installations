@@ -1,0 +1,15 @@
+1) sudo apt install openjdk-11-jdk   -> The purpose of this command is to install the OpenJDK 11 development kit on your system.
+2) sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat   -> Creates the user account "tomcat."
+                                                                  Creates the home directory /opt/tomcat if it doesn't exist.
+                                                                  Sets the login shell to /bin/false.
+                                                                  Adds the user to a group with the same name as the user (due to the -U option).
+                                                                  -r: This option creates a system account, 
+                                                                  -m: This option creates a home directory for the new user account.
+                                                                  -U: This option creates a group with the same name as the user and adds the user to that group. 
+                                                                  -d /opt/tomcat: This option specifies the home directory for the new user, 
+                                                                  -s /bin/false: This option sets the login shell for the user to /bin/false
+                                                                  tomcat: This is the username of the new user being created.
+
+3) wget -c https://downloads.apache.org/tomcat/tomcat-9/v9.0.84/bin/apache-tomcat-9.0.84.tar.gz   -> The purpose of this command is to download the Apache Tomcat 9.0.84 distribution file from the specified URL. 
+wget: This is a command-line utility for downloading files from the web. 
+-c: This option, short for --continue, is used to resume an interrupted download. If the file already exists and is incomplete, wget will attempt to continue downloading it.
