@@ -1,0 +1,44 @@
+Installing JDK on Linux/Ubuntu
+
+Step 1: Download the JDK Binaries
+
+1) wget https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz
+2) tar -xvf openjdk-13.0.1_linux-x64_bin.tar.gz
+3) mv jdk-13.0.1 /opt/
+
+
+Step 2: Setting JAVA_HOME and Path Environment Variables
+
+4) Open .profile file from the home directory and add the following lines to it.
+
+JAVA_HOME='/opt/jdk-13.0.1'
+PATH="$JAVA_HOME/bin:$PATH"
+export PATH
+
+5) relaunch terminal or execute   source .profile  command to apply the configuration changes.
+
+Step 3: Verify the Java Installation
+
+6) java -version
+
+Installing Maven on Linux/Ubuntu
+
+Step 1: Download the Maven Binaries
+
+7) wget https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+8) tar -xvf apache-maven-3.6.3-bin.tar.gz
+9) mv apache-maven-3.6.3 /opt/
+
+Step 2: Setting M2_HOME and Path Variables
+
+10) Add the following lines to the user profile file (.profile)
+
+M2_HOME='/opt/apache-maven-3.6.3'
+PATH="$M2_HOME/bin:$PATH"
+export PATH
+
+11) Relaunch the terminal or execute source .profile to apply the changes.
+
+Step 3: Verify the Maven installation
+
+12) mvn -version
